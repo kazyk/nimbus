@@ -218,7 +218,9 @@
   self.toolbar = [[UIToolbar alloc] initWithFrame:toolbarFrame];
   self.toolbar.autoresizingMask = (UIViewAutoresizingFlexibleTopMargin
                                | UIViewAutoresizingFlexibleWidth);
-  self.toolbar.tintColor = self.toolbarTintColor;
+  if (self.toolbarTintColor) {
+      self.toolbar.tintColor = self.toolbarTintColor;
+  }
   self.toolbar.hidden = self.toolbarHidden;
 
   UIActivityIndicatorView* spinner =
